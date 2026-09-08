@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="https://pravahnews.com/public/uploads/favicon/6170/WhatsApp-Image-2025-12-18-at-4.38.02-PM-removebg-preview.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pravah News - हर पल, हर खबर | Live & Breaking News Portal</title>
+    <meta name="description" content="Stay informed with live breaking news, in-depth articles, and real-time updates across politics, entertainment, sports, and world events." />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/new_prevahnews/assets/index-xvY-YKhJ.js"></script>
+    <link rel="modulepreload" crossorigin href="/new_prevahnews/assets/rolldown-runtime-QTnfLwEv.js">
+    <link rel="modulepreload" crossorigin href="/new_prevahnews/assets/vendor-other-DjDK5o4-.js">
+    <link rel="modulepreload" crossorigin href="/new_prevahnews/assets/vendor-react-Bxqyo-8s.js">
+    <link rel="modulepreload" crossorigin href="/new_prevahnews/assets/vendor-axios-DeoP3Jk6.js">
+    <link rel="stylesheet" crossorigin href="/new_prevahnews/assets/index-fpleA4FR.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element" style="display:none;"></div>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'hi',
+          includedLanguages: 'en,hi',
+          autoDisplay: false
+        }, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
+    
+    <!-- Fix for React + Google Translate DOM mutation crash -->
+    <script>
+      if (typeof Node === 'function' && Node.prototype) {
+        const originalRemoveChild = Node.prototype.removeChild;
+        Node.prototype.removeChild = function (child) {
+          if (child.parentNode !== this) {
+            return child;
+          }
+          return originalRemoveChild.apply(this, arguments);
+        };
+        const originalInsertBefore = Node.prototype.insertBefore;
+        Node.prototype.insertBefore = function (newNode, referenceNode) {
+          if (referenceNode && referenceNode.parentNode !== this) {
+            return newNode;
+          }
+          return originalInsertBefore.apply(this, arguments);
+        };
+      }
+    </script>
+
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v3d52b47920f24c319d37e2661827c42b1787588026925" integrity="sha512-d9sL6GJLXn6fInD1+TVXhTcQOsmxeHfmHAvwGDIxp5TO+uo1fiWW7mHomMj4MLRlCsJDTqXzWLHJFFlPCEIj/A==" data-cf-beacon='{"version":"2024.11.0","token":"b24f45e8d90848b6a627eaaa424aafe6","r":1}' crossorigin="anonymous"></script>
+</body>
+</html>

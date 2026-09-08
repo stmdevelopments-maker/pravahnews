@@ -1,0 +1,172 @@
+/* ==========================================================================
+   Single Line Horizontal Navbar CSS
+   ========================================================================== */
+
+.site-navbar {
+  width: 100%;
+  background-color: var(--bg-surface, #ffffff);
+  border-bottom: 1px solid var(--border-color, #e5e5e5);
+  position: sticky;
+  top: 77px; /* Matches desktop header height */
+  z-index: 990;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.navbar-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 48px;
+}
+
+/* Scroll Arrow Controls */
+.nav-scroll-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color, #e2e8f0);
+  background-color: var(--bg-surface, #ffffff);
+  color: var(--text-main, #0f172a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 2;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.15s ease;
+}
+
+.nav-scroll-btn:hover {
+  background-color: var(--accent-red, #dc2626);
+  color: #ffffff;
+  border-color: var(--accent-red, #dc2626);
+}
+
+/* Single Line Scroll Track */
+.navbar-track {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+  scroll-behavior: smooth;
+  flex: 1;
+  padding: 0 0.5rem;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.navbar-track::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Category Pill Items */
+.nav-item-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted, #475569);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.nav-item-btn:hover {
+  color: var(--accent-red, #dc2626);
+  background-color: var(--bg-elevated, #f1f5f9);
+}
+
+.nav-item-btn.active {
+  background: linear-gradient(135deg, var(--accent-red, #dc2626) 0%, #b91c1c 100%);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);
+  transform: translateY(-1px);
+}
+
+.nav-divider {
+  width: 1px;
+  height: 20px;
+  background-color: var(--border-color, #e2e8f0);
+  margin: 0 0.25rem;
+  flex-shrink: 0;
+}
+
+/* Action Buttons (Live TV / Add Channel) */
+.nav-action-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  background-color: rgba(220, 38, 38, 0.1);
+  color: var(--accent-red, #dc2626);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nav-action-live:hover {
+  background-color: var(--accent-red, #dc2626);
+  color: #ffffff;
+}
+
+.nav-action-add {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  border: 1px solid var(--border-color, #e2e8f0);
+  background: transparent;
+  color: var(--text-main, #0f172a);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nav-action-add:hover {
+  background-color: var(--bg-elevated, #f1f5f9);
+}
+
+.live-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--accent-red, #dc2626);
+  display: inline-block;
+  animation: pulseLive 1.5s infinite;
+}
+
+@keyframes pulseLive {
+  0% { transform: scale(0.95); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.6; }
+  100% { transform: scale(0.95); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .site-navbar {
+    top: 57px; /* Matches mobile header height */
+  }
+  .nav-scroll-btn {
+    display: none;
+  }
+}

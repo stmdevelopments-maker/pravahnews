@@ -1,0 +1,125 @@
+/* ==========================================================================
+   BreakingTicker Styling
+   ========================================================================== */
+
+.breaking-ticker-wrapper {
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.breaking-ticker-container {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  gap: 1rem;
+}
+
+.ticker-label {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding-right: 0.75rem;
+  border-right: 2px solid var(--border-color);
+}
+
+.ticker-content-area {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Masking edges for smooth fade */
+.ticker-content-area::before,
+.ticker-content-area::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ticker-content-area::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-surface), transparent);
+}
+
+.ticker-content-area::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-surface), transparent);
+}
+
+.ticker-track {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  white-space: nowrap;
+  animation: tickerScroll 90s linear infinite;
+  will-change: transform;
+}
+
+.ticker-content-area:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes tickerScroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.ticker-item:hover {
+  color: var(--primary);
+}
+
+.ticker-bullet {
+  color: var(--accent-red);
+  font-size: 0.65rem;
+}
+
+.ticker-title {
+  font-weight: 600;
+}
+
+.ticker-category {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .breaking-ticker-container {
+    height: 44px;
+    gap: 0.5rem;
+  }
+  
+  .ticker-label {
+    padding-right: 0.5rem;
+  }
+  
+  .badge-live {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.5rem;
+  }
+}

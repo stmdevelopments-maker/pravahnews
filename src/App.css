@@ -1,0 +1,62 @@
+/* ==========================================================================
+   App Wrapper & Layout Styling - Dailyhunt Edition
+   ========================================================================== */
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--bg-primary, #f8fafc);
+  color: var(--text-main, #0f172a);
+  transition: background-color var(--transition-normal, 0.3s), color var(--transition-normal, 0.3s);
+  padding-bottom: 70px; /* Space for Dailyhunt BottomNav on mobile */
+}
+
+@media (min-width: 768px) {
+  .app-wrapper {
+    padding-bottom: 0;
+  }
+}
+
+/* Toast Notifications */
+.toast-popup {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-lg, 16px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+  font-size: 0.9rem;
+  font-weight: 700;
+  max-width: 400px;
+  animation: toastSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes toastSlideIn {
+  0% { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.toast-info {
+  background-color: #0f172a;
+  color: #ffffff;
+  border: 1px solid #334155;
+}
+
+.toast-success {
+  background-color: #10b981;
+  color: #ffffff;
+  border: 1px solid #059669;
+}
+
+.toast-error {
+  background-color: #e11d48;
+  color: #ffffff;
+  border: 1px solid #be123c;
+}
